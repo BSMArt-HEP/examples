@@ -1,0 +1,49 @@
+{
+    "Codes":
+    {
+	"SPheno": {
+	    "Command": "~/BSMArt/SPheno-4.0.4/bin/SPhenoSM_SQQ",
+	    "InputFile": "SMSQQtemplate.in",
+	    "OutputFile": "SPheno.spc.SM_SQQ",
+	    "Run": "True"
+	},
+
+	"MicrOmegas": {
+	    "Command": "~/BSMArt/micromegas_5.2.1/SM_SQQ/MicrOmegas_v5.2_BSMArt",
+	    "InputFile": "SPheno.spc.SM_SQQ",
+	    "OutputFile": "omg.out",
+	    "Run": "True",
+	    "DD_Limits": "True"
+	}
+    },
+
+  
+  "Setup": {
+    "RunName": "SMSQQ_Grid_01",
+    "Type": "Grid",
+    "StoreAllPoints":"False",
+    "Cores": 10
+  },
+
+
+  "Variables": {
+      "kappa": "np.geomspace(1.0e2, 1.0e14, num=10)",
+      "ms2": "np.geomspace(1.0e6, 1.0e12, num=10)",
+      "mqm2": "np.geomspace(1.0e6, 1.0e12, num=10)",
+      "mqp2": "np.geomspace(1.0e6, 1.0e12, num=10)",
+      "lambda": "np.linspace(2.8, 3.2, num=10)"
+  },
+
+    "Observables": {
+	"ms" : { "SLHA": ["MASS", [55]]     },
+	"mqm" : { "SLHA": ["MASS", [103]]     },
+	"mqp" : { "SLHA": ["MASS", [105]]     },
+        "Oh2" : { "SLHA": ["DARKMATTER", [1]]     },
+        "DMpval" : { "SLHA": ["DARKMATTER", [501]]     },
+	"Unit0" : { "SLHA": ["TREELEVELUNITARITY", [0]]     },
+	"UnitFull" : { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [0]]    }
+
+    }
+
+    
+}

@@ -1,0 +1,58 @@
+{
+    "Codes":
+    {
+        "SPheno": {
+            "Command": "~/BSMArt/SPheno-4.0.4/bin/SPhenoSM_SQQ",
+            "InputFile": "SMSQQ_AL.in",
+            "OutputFile": "SPheno.spc.SM_SQQ",
+            "Run": "True"
+        },
+
+        "MicrOmegas": {
+            "Command": "~/BSMArt/micromegas_5.2.1_C/SM_SQQ/MicrOmegas_v5.2_BSMArt",
+            "InputFile": "SPheno.spc.SM_SQQ",
+            "OutputFile": "omg.out",
+            "Run": "True",
+            "DD_Limits": "True"
+        }
+
+    },
+  
+    "Setup": {
+  	 "RunName": "SMSQQ_Random_01",
+  	 "Type": "Random",
+  	 "csv":"True",
+  	 "StoreAllPoints":"True",
+  	 "Cores": 20,
+  	 "Merge Results": "True",
+  	 "Points": 50000
+    },
+
+
+     "Variables": {
+        "kappa": { "RANGE": [1.5e5,1.85e5]},
+        "ms2-mqp2":    { "RANGE": [1.0e8,1.5e9]},
+        "mqm2-ms2":   { "RANGE": [1e8,5.0e9]},
+        "mqp2":   { "RANGE": [2e8,1.8e9]},
+        "lams":  { "RANGE": [2.8,3.2]}
+    },
+
+
+    "Observables": {
+	"ms":      { "SLHA": ["MASS", [55]]},
+	"mqm":     { "SLHA": ["MASS", [103]]},
+	"mqp":     { "SLHA": ["MASS", [105]]},
+	"Oh2":     { "SLHA": ["DARKMATTER", [1]]},
+        "DD":      { "SLHA": ["DARKMATTER", [501]]},
+	"TreeU":   { "SLHA": ["TREELEVELUNITARITY", [0]]},
+	"TriU":    { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [0]]},
+	"TriU_a0": { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [1]]}
+    },
+    "Plotting" :{
+        "Strategy" : "csv",
+        "Plots": {
+        "kappa_vs_mS": { "Labels": ["$\\kappa$ (GeV)","$m_{S}$ (GeV)"], "Values": ["kappa","ms"]}
+        }
+    }
+    
+}

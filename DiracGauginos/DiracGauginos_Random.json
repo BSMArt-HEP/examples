@@ -1,0 +1,47 @@
+{
+    "Codes":
+    {
+	"SPheno": {
+	    "Command": "~/moutafis/BSMArt/SPheno-4.0.4/bin/SPhenoDiracGauginos",
+	    "InputFile": "DiracGauginos_Random.in",
+	    "OutputFile": "SPheno.spc.DiracGauginos",
+	    "Run": "True"
+	},
+
+	"MicrOmegas": {
+	    "Command": "~/BSMArt/micromegas_5.2.1/DiracGauginos/MicrOmegas_v5.2_BSMArt",
+	    "InputFile": "SPheno.spc.DiracGauginos",
+	    "OutputFile": "omg.out",
+	    "Run": "False",
+	    "DD_Limits": "False"
+	}
+    },
+
+  
+  "Setup": {
+    "RunName": "DiracGauginos_Random_01",
+    "Type": "Random",
+    "csv":"True",
+    "StoreAllPoints":"True",
+    "Cores": 15,
+    "Points": 100000,
+    "Merge Results": "True"
+  },
+
+
+  "Variables": {
+      "MDB": { "RANGE": [56,2016]},
+      "MDW": { "RANGE": [199,1532]},
+      "Mu": { "RANGE": [202,2056]},
+      "TanBeta": { "RANGE": [5.45, 34.90]},
+      "lam": { "RANGE": [0.01, 1.46]},
+      "LT": { "RANGE": [-1.39, 0.44]}
+  },
+
+
+  "Observables": {
+      "mH" : { "SLHA": ["MASS", [25]]}
+  }
+
+    
+}

@@ -1,0 +1,45 @@
+{
+   
+   "Codes":{
+   "SPheno": {
+    "Command": "~/BSMArt/SPheno-4.0.5/bin/SPhenoSMSSM",
+    "InputFile": "LesHouches.in.SMSSM",
+       "OutputFile": "SPheno.spc.SMSSM",
+       "Run": "True"
+   }},
+
+   
+
+
+  "Setup": {
+      "RunName": "m0m12_grid",
+      "StoreAllPoints": "True",
+      "Type": "Grid",
+      "Cores": 4
+  },
+
+  "Variables": {
+    "0": "np.geomspace(100, 200, num=2)",
+    "1": "np.geomspace(200, 210, num=2)",
+    "2": "np.geomspace(300, 310, num=2)"
+  },
+
+  "Observables": {
+	"mh" : { "SLHA": ["MASS", [25]],
+		"MEAN" : 125.0,
+		"VARIANCE": 1.0
+	      },
+	"mH1" : { "SLHA": ["MASS", [35]],
+		"MEAN" : 300.0,
+		"VARIANCE": 1.0
+	      },
+	"mH2" : { "SLHA": ["MASS", [45]],
+		"MEAN" : 500.0,
+		"VARIANCE": 1.0
+	      }
+	
+
+    }
+
+
+}

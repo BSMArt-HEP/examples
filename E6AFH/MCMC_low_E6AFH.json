@@ -1,0 +1,96 @@
+{
+    "Codes":{
+        "SPheno":{
+             "Command": "~/BSMArt/CleanSPheno/bin/SPhenoE6AFH",
+             "InputFile": "low_template.in",
+             "OutputFile": "SPheno.spc.E6AFH",
+             "Observables":{
+                            "mh" : { "SLHA": ["MASS", [25]], "MEAN" : 125.0, "VARIANCE": 3.0, "SCALING": "GAUSS"},
+                            "mW" : { "SLHA": ["MASS", [24]], "MEAN" : 80.410, "VARIANCE": 0.03, "SCALING": "GAUSS"},
+                            "mZp" : { "SLHA": ["MASS", [31]], "SCALING": "OFF"},
+                            "mCha" : { "SLHA": ["MASS", [1000024]], "SCALING": "OFF"},
+                            "mChi1" : { "SLHA": ["MASS", [1000022]], "SCALING": "OFF"},
+                            "mChi2" : { "SLHA": ["MASS", [1000023]], "SCALING": "OFF", "MEAN": 250.0, "VARIANCE": 75.0},
+                            "mFe4" : { "SLHA": ["MASS", [2000253]], "SCALING": "OFF", "MEAN": 800.0, "VARIANCE": 20.0},
+                            "mHI01" : {"SLHA": ["MASS", [82]], "SCALING": "OFF"},
+		            "mHI02" : {"SLHA": ["MASS", [84]], "SCALING": "OFF"},
+                            "mHIP1" : {"SLHA": ["MASS", [81]], "SCALING": "OFF"},
+                            "mChiP1" : { "SLHA": ["MASS", [1000081]], "SCALING": "OFF"},
+                            "mChiP2" : { "SLHA": ["MASS", [1000082]], "SCALING": "OFF"},
+                            "mChaP1" : { "SLHA": ["MASS", [2000266]], "SCALING": "OFF"},
+                            "muegamma" : { "SLHA": ["FLAVORKITLFV", [701]], "SCALING": "OFF"},
+                            "mueee" : { "SLHA": ["FLAVORKITLFV", [901]], "SCALING": "OFF"}
+                           },
+             "Run": "True"
+           },
+	"MicrOmegas": {
+	    "Command": "~/BSMArt/micromegas_5.3.41/SARAH_E6AFH/MicrOmegas_v5.3_BSMArt_onlyxsections",
+	    "Cross-sections":"True",
+	    "InputFile": "SPheno.spc.E6AFH",
+	    "Run":"True"
+	},
+	"ZPEED":{
+	    "Path": "~/BSMArt/ZPEED-master",
+	    "Run": "True",
+	    "Observables": {
+		"loglike": {"SLHA": ["ZPEED",[1]], "SCALING": "MINUSEXPUSER"},
+		"CLs" : { "SLHA":["ZPEED",[3]], "SCALING": "OFF", "MEAN": 0.05, "VARIANCE": 0.01}
+		}
+	},
+	"Zprime": {
+	    "PDGs": [31],
+	    "Observables": {"zplim": {"SLHA":["ZPRIME",[1]], "SCALING":"OFF"}},
+	    "Run": "True"
+	},
+	"HiggsTools": {
+		"HiggsBounds Dataset": "~/BSMArt/hbdataset-master",
+		"HiggsSignals Dataset": "~/BSMArt/hsdataset-main",
+		"Neutral Higgs" :[25,35,45,36],
+		"Charged Higgs" :[37],
+		"Observables":{
+                            "HBobsr" : {"SLHA": ["HIGGSTOOLS",[2]], "SCALING": "UPPER", "MEAN": 1.0, "VARIANCE": 0.1},
+                            "HSpval" : {"SLHA": ["HIGGSTOOLS",[13]], "SCALING": "USER"}
+                           },
+             	"Run": "True"
+           },
+	"SModelS": {
+		"Path": "~/BSMArt/smodels-main/",
+		"Cache": "~/BSMArt/smodels-main/CACHE",
+		"QNUMBERS file": "QNUMBERS_E6AFH.slha",
+		"Parameter file": "~/BSMArt/BSMArt_E6AFH/parameters.ini",
+		"Observables": {"SModelSr": {"SLHA":["SMODELS",[1]], "SCALING": "UPPER", "MEAN": 1.0, "VARIANCE": 0.2}, "SModelSrm1": {"SLHA":["SMODELS",[2]], "SCALING":"OFF"}},
+             	"Run": "True"
+	}
+    },
+
+    "Setup":{
+        "RunName": "MCMC_low_E6AFH",
+        "Type": "MCMC",
+        "Cores": 12,
+	"Points" : 5000,
+        "StoreEverything": "False",
+        "StoreAllPoints": "True",
+        "StoreSeparateFiles": "False",
+        "Merge Results": "True",
+	"csv" : "True",
+        "Output File": "E6AFH_Output",
+        "Spectrum File": "SPheno.spc.E6AFH"
+    },
+
+    "Variables":{
+        "tanb" : { "RANGE": [2,10], "VARIANCE": 1.0},
+	"lamp" :{ "RANGE": [-0.07,0.07], "VARIANCE": 0.01},
+	"lmmix": {"RANGE": [0.2,0.8], "VARIANCE": 0.1}
+    },
+
+    "Observables":{
+    },
+    "Plotting" :{
+        "Strategy" : "csv",
+        "Plots": {
+        "m0_vs_mh": { "Labels": ["$m_0$ (GeV)","$m_{h}$ (GeV)"], "Values": ["m0","mh"]},
+        "mW_vs_mZp": { "Labels": ["$m_W$ (GeV)","$m_{Z^\\prime}$ (GeV)"], "Values": ["mW","mZp"]}
+
+        }
+    }
+}

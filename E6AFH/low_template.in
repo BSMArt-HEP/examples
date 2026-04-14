@@ -1,0 +1,414 @@
+BLOCK MODSEL #
+ 1     0 # 1/0: High/low scale input 
+ 2     1 # Boundary Condition 
+ 6     1 # Generation Mixing 
+ 12     2.31862397E+03 # Renormalization scale 
+BLOCK SMINPUTS #
+ 1     1.27932000E+02 # alpha_em^-1(MZ)^MSbar 
+ 2     1.16637000E-05 # G_mu [GeV^-2] 
+ 3     1.18700000E-01 # alpha_s(MZ)^MSbar 
+ 4     9.11887000E+01 # m_Z(pole) 
+ 5     4.18000000E+00 # m_b(m_b), MSbar 
+ 6     1.72890000E+02 # m_t(pole) 
+ 7     1.77669000E+00 # m_tau(pole) 
+BLOCK MINPAR #
+# 1     3.21647986E+03 # m0 
+# 2     1.32787503E+03 # m12 
+ 3      tanb # TanBeta 
+# 5    -2.38318718E+03 # Azero 
+BLOCK SPHENOINPUT #
+ 1       -1.00000000E+00 # error level 
+ 2        0.00000000E+00 # SPA conventions 
+ 7       0 # Skip 2-loop Higgs corrections 
+ 8        3.00000000E+00 # Method used for two-loop calculation 
+ 9        1.00000000E+00 # Gaugeless limit used at two-loop 
+ 10      0 # safe-mode used at two-loop 
+ 11       1.00000000E+00 # calculate branching ratios 
+ 13       1.00000000E+00 # 3-Body decays: none (0), fermion (1), scalar (2), both (3) 
+ 14      0 # Run couplings to scale of decaying particle 
+ 12       1.00000000E-04 # write only branching ratios larger than this value 
+ 15       1.00000000E-30 # write only decay if width larger than this value 
+ 19      -2 # Matching order (-2:automatic, -1:pole, 0-2: tree, one- & two-loop) 
+ 31       3.18629336E+16 # fixed GUT scale (-1: dynamical GUT scale) 
+ 32      0 # Strict unification 
+ 34       1.00000000E-04 # Precision of mass calculation 
+ 35       4.00000000E+01 # Maximal number of iterations 
+ 36      5 # Minimal number of iterations before discarding points 
+ 37      1 # Set Yukawa scheme 
+ 38       2.00000000E+00 # 1- or 2-Loop RGEs 
+ 50       0.00000000E+00 # Majorana phases: use only positive masses (put 0 to use file with CalcHep/Micromegas!) 
+ 51       0.00000000E+00 # Write Output in CKM basis 
+ 52       1.00000000E+00 # Write spectrum in case of tachyonic states 
+ 55       1.00000000E+00 # Calculate loop corrected masses 
+ 57       1.00000000E+00 # Calculate low energy constraints 
+ 60       1.00000000E+00 # Include possible, kinetic mixing 
+ 65       1.00000000E+00 # Solution tadpole equation 
+ 66      1 # Two-Scale Matching 
+ 67      1 # effective Higgs mass calculation 
+ 75      0 # Write WHIZARD files 
+ 76      0 # Write HiggsBounds file: 2 for HiggsBounds5, 1 for HiggsBounds4 and below 
+ 77      1 # Output for MicrOmegas (running masses for light quarks; real mixing matrices) 
+ 78      0 # Output for MadGraph (writes also vanishing blocks) 
+ 79      0 # Write WCXF files (exchange format for Wilson coefficients) 
+ 86       0.00000000E+00 # Maximal width to be counted as invisible in Higgs decays; -1: only LSP 
+ 510      0.00000000E+00 # Write tree level values for tadpole solutions 
+ 515     0 # Write parameter values at GUT scale 
+ 520      1.00000000E+00 # Write effective Higgs couplings (HiggsBounds blocks): put 0 to use file with MadGraph! 
+ 521      1.00000000E+00 # Diphoton/Digluon widths including higher order 
+ 525      0.00000000E+00 # Write loop contributions to diphoton decay of Higgs 
+ 530      0.00000000E+00 # Write Blocks for Vevacious 
+ 1101    1 # Include Glu in 1.loop corrections 
+ 1102    1 # Include Fv in 1.loop corrections 
+ 1103    1 # Include ChiI in 1.loop corrections 
+ 1104    1 # Include Fd in 1.loop corrections 
+ 1105    1 # Include Fu in 1.loop corrections 
+ 1106    1 # Include Chi in 1.loop corrections 
+ 1107    1 # Include Cha in 1.loop corrections 
+ 1108    1 # Include ChaP in 1.loop corrections 
+ 1109    1 # Include ChiP in 1.loop corrections 
+ 1110    1 # Include Fe in 1.loop corrections 
+ 1111    1 # Include FDX in 1.loop corrections 
+ 1201    1 # Include Sd in 1.loop corrections 
+ 1202    1 # Include Sv in 1.loop corrections 
+ 1203    1 # Include Su in 1.loop corrections 
+ 1204    1 # Include hh in 1.loop corrections 
+ 1205    1 # Include Ah in 1.loop corrections 
+ 1206    1 # Include Hpm in 1.loop corrections 
+ 1207    1 # Include Se in 1.loop corrections 
+ 1208    1 # Include SHI0 in 1.loop corrections 
+ 1209    1 # Include SHIp in 1.loop corrections 
+ 1210    1 # Include SDX in 1.loop corrections 
+ 1301    1 # Include VG in 1.loop corrections 
+ 1302    1 # Include VP in 1.loop corrections 
+ 1303    1 # Include VZ in 1.loop corrections 
+ 1304    1 # Include VZp in 1.loop corrections 
+ 1305    1 # Include VWm in 1.loop corrections 
+ 1401    1 # Include gG in 1.loop corrections 
+ 1402    1 # Include gA in 1.loop corrections 
+ 1403    1 # Include gZ in 1.loop corrections 
+ 1404    1 # Include gZp in 1.loop corrections 
+ 1405    1 # Include gWm in 1.loop corrections 
+ 1406    1 # Include gWpC in 1.loop corrections 
+ 1500    1 # Include Wave diagrams 1.loop corrections 
+ 1501    1 # Include Penguin diagrams 1.loop corrections 
+ 1502    1 # Include Box diagrams 1.loop corrections 
+BLOCK DECAYOPTIONS #
+ 1     1 # Calc 3-Body decays of Cha 
+ 2     1 # Calc 3-Body decays of Chi 
+ 3     1 # Calc 3-Body decays of ChiI 
+ 4     1 # Calc 3-Body decays of ChiP 
+ 5     1 # Calc 3-Body decays of FDX 
+ 6     1 # Calc 3-Body decays of Glu 
+ 7     1 # Calc 3-Body decays of ChaP 
+ 8     1 # Calc 3-Body decays of Sd 
+ 9     1 # Calc 3-Body decays of SDX 
+ 10    1 # Calc 3-Body decays of Se 
+ 11    1 # Calc 3-Body decays of SHI0 
+ 12    1 # Calc 3-Body decays of SHIp 
+ 13    1 # Calc 3-Body decays of Su 
+ 14    1 # Calc 3-Body decays of Sv 
+ 15    1 # Calc 3-Body decays of Fe 
+BLOCK ESIXGQLIN #
+ 1 1 1     0.00000000E+00 # Real(gQL(1,1,1),dp) 
+ 1 1 2     0.00000000E+00 # Real(gQL(1,1,2),dp) 
+ 1 1 3     0.00000000E+00 # Real(gQL(1,1,3),dp) 
+ 1 2 1     0.00000000E+00 # Real(gQL(1,2,1),dp) 
+ 1 2 2     0.00000000E+00 # Real(gQL(1,2,2),dp) 
+ 1 2 3     0.00000000E+00 # Real(gQL(1,2,3),dp) 
+ 1 3 1     0.00000000E+00 # Real(gQL(1,3,1),dp) 
+ 1 3 2     0.00000000E+00 # Real(gQL(1,3,2),dp) 
+ 1 3 3     0.00000000E+00 # Real(gQL(1,3,3),dp) 
+ 2 1 1     0.00000000E+00 # Real(gQL(2,1,1),dp) 
+ 2 1 2     0.00000000E+00 # Real(gQL(2,1,2),dp) 
+ 2 1 3     0.00000000E+00 # Real(gQL(2,1,3),dp) 
+ 2 2 1     0.00000000E+00 # Real(gQL(2,2,1),dp) 
+ 2 2 2     0.00000000E+00 # Real(gQL(2,2,2),dp) 
+ 2 2 3     0.00000000E+00 # Real(gQL(2,2,3),dp) 
+ 2 3 1     0.00000000E+00 # Real(gQL(2,3,1),dp) 
+ 2 3 2     0.00000000E+00 # Real(gQL(2,3,2),dp) 
+ 2 3 3     0.00000000E+00 # Real(gQL(2,3,3),dp) 
+ 3 1 1     1.06910881E-07 # Real(gQL(3,1,1),dp) 
+ 3 1 2    -7.37240098E-07 # Real(gQL(3,1,2),dp) 
+ 3 1 3    -2.19053925E-04 # Real(gQL(3,1,3),dp) 
+ 3 2 1    -7.37240098E-07 # Real(gQL(3,2,1),dp) 
+ 3 2 2     5.08388814E-06 # Real(gQL(3,2,2),dp) 
+ 3 2 3     1.51056034E-03 # Real(gQL(3,2,3),dp) 
+ 3 3 1    -2.19053925E-04 # Real(gQL(3,3,1),dp) 
+ 3 3 2     1.51056034E-03 # Real(gQL(3,3,2),dp) 
+ 3 3 3     4.48827924E-01 # Real(gQL(3,3,3),dp) 
+BLOCK ESIXGQRIN #
+ 1 1 1     0.00000000E+00 # Real(gQR(1,1,1),dp) 
+ 1 1 2     0.00000000E+00 # Real(gQR(1,1,2),dp) 
+ 1 1 3     0.00000000E+00 # Real(gQR(1,1,3),dp) 
+ 1 2 1     0.00000000E+00 # Real(gQR(1,2,1),dp) 
+ 1 2 2     0.00000000E+00 # Real(gQR(1,2,2),dp) 
+ 1 2 3     0.00000000E+00 # Real(gQR(1,2,3),dp) 
+ 1 3 1     0.00000000E+00 # Real(gQR(1,3,1),dp) 
+ 1 3 2     0.00000000E+00 # Real(gQR(1,3,2),dp) 
+ 1 3 3     0.00000000E+00 # Real(gQR(1,3,3),dp) 
+ 2 1 1     0.00000000E+00 # Real(gQR(2,1,1),dp) 
+ 2 1 2     0.00000000E+00 # Real(gQR(2,1,2),dp) 
+ 2 1 3     0.00000000E+00 # Real(gQR(2,1,3),dp) 
+ 2 2 1     0.00000000E+00 # Real(gQR(2,2,1),dp) 
+ 2 2 2     0.00000000E+00 # Real(gQR(2,2,2),dp) 
+ 2 2 3     0.00000000E+00 # Real(gQR(2,2,3),dp) 
+ 2 3 1     0.00000000E+00 # Real(gQR(2,3,1),dp) 
+ 2 3 2     0.00000000E+00 # Real(gQR(2,3,2),dp) 
+ 2 3 3     0.00000000E+00 # Real(gQR(2,3,3),dp) 
+ 3 1 1     8.38160756E-18 # Real(gQR(3,1,1),dp) 
+ 3 1 2     4.99404591E-14 # Real(gQR(3,1,2),dp) 
+ 3 1 3    -1.07871649E-08 # Real(gQR(3,1,3),dp) 
+ 3 2 1    -1.09813248E-15 # Real(gQR(3,2,1),dp) 
+ 3 2 2    -6.54304555E-12 # Real(gQR(3,2,2),dp) 
+ 3 2 3     1.41330121E-06 # Real(gQR(3,2,3),dp) 
+ 3 3 1    -3.50250274E-10 # Real(gQR(3,3,1),dp) 
+ 3 3 2    -2.08690986E-06 # Real(gQR(3,3,2),dp) 
+ 3 3 3     4.50773539E-01 # Real(gQR(3,3,3),dp) 
+BLOCK MSD2IN #
+ 1 1     1.46696501E+07 # Real(md2(1,1),dp) 
+ 1 2     9.99913330E-04 # Real(md2(1,2),dp) 
+ 1 3    -1.81804166E+00 # Real(md2(1,3),dp) 
+ 2 1     9.99913330E-04 # Real(md2(2,1),dp) 
+ 2 2     1.46678575E+07 # Real(md2(2,2),dp) 
+ 2 3     2.38189330E+02 # Real(md2(2,3),dp) 
+ 3 1    -1.81804166E+00 # Real(md2(3,1),dp) 
+ 3 2     2.38189330E+02 # Real(md2(3,2),dp) 
+ 3 3     1.05907423E+07 # Real(md2(3,3),dp) 
+BLOCK MDX2IN #
+ 1 1     8.69731456E+06 # Real(mDx2(1,1),dp) 
+ 1 2     0.00000000E+00 # Real(mDx2(1,2),dp) 
+ 1 3     0.00000000E+00 # Real(mDx2(1,3),dp) 
+ 2 1     0.00000000E+00 # Real(mDx2(2,1),dp) 
+ 2 2     8.69731456E+06 # Real(mDx2(2,2),dp) 
+ 2 3     0.00000000E+00 # Real(mDx2(2,3),dp) 
+ 3 1     0.00000000E+00 # Real(mDx2(3,1),dp) 
+ 3 2     0.00000000E+00 # Real(mDx2(3,2),dp) 
+ 3 3     2.18747701E+06 # Real(mDx2(3,3),dp) 
+BLOCK MDXBAR2IN #
+ 1 1     8.13907826E+06 # Real(mDxB2(1,1),dp) 
+ 1 2     0.00000000E+00 # Real(mDxB2(1,2),dp) 
+ 1 3     0.00000000E+00 # Real(mDxB2(1,3),dp) 
+ 2 1     0.00000000E+00 # Real(mDxB2(2,1),dp) 
+ 2 2     8.13907826E+06 # Real(mDxB2(2,2),dp) 
+ 2 3     0.00000000E+00 # Real(mDxB2(2,3),dp) 
+ 3 1     0.00000000E+00 # Real(mDxB2(3,1),dp) 
+ 3 2     0.00000000E+00 # Real(mDxB2(3,2),dp) 
+ 3 3     5.98307225E+06 # Real(mDxB2(3,3),dp) 
+BLOCK MSE2IN #
+ 1 1     1.25971940E+07 # Real(me2(1,1),dp) 
+ 1 2    -7.78979966E-01 # Real(me2(1,2),dp) 
+ 1 3    -7.42350049E-01 # Real(me2(1,3),dp) 
+ 2 1    -7.78979966E-01 # Real(me2(2,1),dp) 
+ 2 2     1.25783444E+07 # Real(me2(2,2),dp) 
+ 2 3    -7.42230031E-01 # Real(me2(2,3),dp) 
+ 3 1    -7.42350049E-01 # Real(me2(3,1),dp) 
+ 3 2    -7.42230031E-01 # Real(me2(3,2),dp) 
+ 3 3     7.36122407E+06 # Real(me2(3,3),dp) 
+BLOCK MHDINERT2IN #
+ 1 1     3.01287020E+07 # Real(mH1I2(1,1),dp) 
+ 1 2    -6.60409095E+06 # Real(mH1I2(1,2),dp) 
+ 2 1    -6.60409095E+06 # Real(mH1I2(2,1),dp) 
+ 2 2     3.01287020E+07 # Real(mH1I2(2,2),dp) 
+BLOCK MHUINERT2IN #
+ 1 1     3.03670844E+07 # Real(mH2I2(1,1),dp) 
+ 1 2    -8.68376002E+06 # Real(mH2I2(1,2),dp) 
+ 2 1    -8.68376002E+06 # Real(mH2I2(2,1),dp) 
+ 2 2     3.03670844E+07 # Real(mH2I2(2,2),dp) 
+BLOCK MSL2IN #
+ 1 1     1.21366735E+07 # Real(ml2(1,1),dp) 
+ 1 2    -1.29684252E-07 # Real(ml2(1,2),dp) 
+ 1 3    -2.02243854E-06 # Real(ml2(1,3),dp) 
+ 2 1    -1.29684252E-07 # Real(ml2(2,1),dp) 
+ 2 2     1.21273292E+07 # Real(ml2(2,2),dp) 
+ 2 3    -4.17893974E-04 # Real(ml2(2,3),dp) 
+ 3 1    -2.02243854E-06 # Real(ml2(3,1),dp) 
+ 3 2    -4.17893974E-04 # Real(ml2(3,2),dp) 
+ 3 3     9.54590826E+06 # Real(ml2(3,3),dp) 
+BLOCK MSQ2IN #
+ 1 1     1.28975790E+07 # Real(mq2(1,1),dp) 
+ 1 2     1.24812570E+03 # Real(mq2(1,2),dp) 
+ 1 3    -2.35398252E+04 # Real(mq2(1,3),dp) 
+ 2 1     1.24812570E+03 # Real(mq2(2,1),dp) 
+ 2 2     1.28883191E+07 # Real(mq2(2,2),dp) 
+ 2 3     1.62326676E+05 # Real(mq2(2,3),dp) 
+ 3 1    -2.35398252E+04 # Real(mq2(3,1),dp) 
+ 3 2     1.62326676E+05 # Real(mq2(3,2),dp) 
+ 3 3     5.52722990E+05 # Real(mq2(3,3),dp) 
+BLOCK MSU2IN #
+ 1 1     1.22932939E+07 # Real(mu2(1,1),dp) 
+ 1 2     1.57847195E-06 # Real(mu2(1,2),dp) 
+ 1 3     6.65959458E-03 # Real(mu2(1,3),dp) 
+ 2 1     1.57847195E-06 # Real(mu2(2,1),dp) 
+ 2 2     1.22931114E+07 # Real(mu2(2,2),dp) 
+ 2 3     3.97001594E+01 # Real(mu2(2,3),dp) 
+ 3 1     6.65959458E-03 # Real(mu2(3,1),dp) 
+ 3 2     3.97001594E+01 # Real(mu2(3,2),dp) 
+ 3 3     2.08052109E+05 # Real(mu2(3,3),dp) 
+BLOCK YXIN #
+ 1     1.53694392E-04 # Real(yx(1) ,dp) 
+ 2     1.53660540E-04 # Real(yx(2) ,dp) 
+ 3     1.43824045E-04 # Real(yx(3) ,dp) 
+BLOCK ESIXKAPPAIN #
+ 1 1     3.15287767E-01 # Real(kap(1,1),dp) 
+ 1 2     0.00000000E+00 # Real(kap(1,2),dp) 
+ 1 3     0.00000000E+00 # Real(kap(1,3),dp) 
+ 2 1     0.00000000E+00 # Real(kap(2,1),dp) 
+ 2 2     3.15287767E-01 # Real(kap(2,2),dp) 
+ 2 3     0.00000000E+00 # Real(kap(2,3),dp) 
+ 3 1     0.00000000E+00 # Real(kap(3,1),dp) 
+ 3 2     0.00000000E+00 # Real(kap(3,2),dp) 
+ 3 3     2.69507702E-01 # Real(kap(3,3),dp) 
+BLOCK ESIXLAMBDA12IN #
+ 1 1    lamp # Real(lamI(1,1),dp) 
+ 1 2     0.0E+00 # Real(lamI(1,2),dp) 
+ 2 1     0.0E+00 # Real(lamI(2,1),dp) 
+ 2 2    lamp # Real(lamI(2,2),dp) 
+BLOCK LAMBDA5IN #
+ 1     lmmix # Real(lam5(1) ,dp) 
+ 2     lmmix # Real(lam5(2) ,dp) 
+BLOCK LAMBDA6IN #
+ 1     0.01 # Real(lam6(1) ,dp) 
+ 2     0.01 # Real(lam6(2) ,dp) 
+BLOCK ESIXTGQLIN #
+ 1 1 1     0.00000000E+00 # Real(TQL(1,1,1),dp) 
+ 1 1 2     0.00000000E+00 # Real(TQL(1,1,2),dp) 
+ 1 1 3     0.00000000E+00 # Real(TQL(1,1,3),dp) 
+ 1 2 1     0.00000000E+00 # Real(TQL(1,2,1),dp) 
+ 1 2 2     0.00000000E+00 # Real(TQL(1,2,2),dp) 
+ 1 2 3     0.00000000E+00 # Real(TQL(1,2,3),dp) 
+ 1 3 1     0.00000000E+00 # Real(TQL(1,3,1),dp) 
+ 1 3 2     0.00000000E+00 # Real(TQL(1,3,2),dp) 
+ 1 3 3     0.00000000E+00 # Real(TQL(1,3,3),dp) 
+ 2 1 1     0.00000000E+00 # Real(TQL(2,1,1),dp) 
+ 2 1 2     0.00000000E+00 # Real(TQL(2,1,2),dp) 
+ 2 1 3     0.00000000E+00 # Real(TQL(2,1,3),dp) 
+ 2 2 1     0.00000000E+00 # Real(TQL(2,2,1),dp) 
+ 2 2 2     0.00000000E+00 # Real(TQL(2,2,2),dp) 
+ 2 2 3     0.00000000E+00 # Real(TQL(2,2,3),dp) 
+ 2 3 1     0.00000000E+00 # Real(TQL(2,3,1),dp) 
+ 2 3 2     0.00000000E+00 # Real(TQL(2,3,2),dp) 
+ 2 3 3     0.00000000E+00 # Real(TQL(2,3,3),dp) 
+ 3 1 1    -1.52285012E-03 # Real(TQL(3,1,1),dp) 
+ 3 1 2     1.05012931E-02 # Real(TQL(3,1,2),dp) 
+ 3 1 3     1.88431469E+00 # Real(TQL(3,1,3),dp) 
+ 3 2 1     1.05012931E-02 # Real(TQL(3,2,1),dp) 
+ 3 2 2    -7.24149780E-02 # Real(TQL(3,2,2),dp) 
+ 3 2 3    -1.29938583E+01 # Real(TQL(3,2,3),dp) 
+ 3 3 1     1.88431469E+00 # Real(TQL(3,3,1),dp) 
+ 3 3 2    -1.29938583E+01 # Real(TQL(3,3,2),dp) 
+ 3 3 3    -1.32853348E+03 # Real(TQL(3,3,3),dp) 
+BLOCK ESIXTGQRIN #
+ 1 1 1     0.00000000E+00 # Real(TQR(1,1,1),dp) 
+ 1 1 2     0.00000000E+00 # Real(TQR(1,1,2),dp) 
+ 1 1 3     0.00000000E+00 # Real(TQR(1,1,3),dp) 
+ 1 2 1     0.00000000E+00 # Real(TQR(1,2,1),dp) 
+ 1 2 2     0.00000000E+00 # Real(TQR(1,2,2),dp) 
+ 1 2 3     0.00000000E+00 # Real(TQR(1,2,3),dp) 
+ 1 3 1     0.00000000E+00 # Real(TQR(1,3,1),dp) 
+ 1 3 2     0.00000000E+00 # Real(TQR(1,3,2),dp) 
+ 1 3 3     0.00000000E+00 # Real(TQR(1,3,3),dp) 
+ 2 1 1     0.00000000E+00 # Real(TQR(2,1,1),dp) 
+ 2 1 2     0.00000000E+00 # Real(TQR(2,1,2),dp) 
+ 2 1 3     0.00000000E+00 # Real(TQR(2,1,3),dp) 
+ 2 2 1     0.00000000E+00 # Real(TQR(2,2,1),dp) 
+ 2 2 2     0.00000000E+00 # Real(TQR(2,2,2),dp) 
+ 2 2 3     0.00000000E+00 # Real(TQR(2,2,3),dp) 
+ 2 3 1     0.00000000E+00 # Real(TQR(2,3,1),dp) 
+ 2 3 2     0.00000000E+00 # Real(TQR(2,3,2),dp) 
+ 2 3 3     0.00000000E+00 # Real(TQR(2,3,3),dp) 
+ 3 1 1    -9.33736729E-14 # Real(TQR(3,1,1),dp) 
+ 3 1 2    -5.56348065E-10 # Real(TQR(3,1,2),dp) 
+ 3 1 3     1.07900153E-04 # Real(TQR(3,1,3),dp) 
+ 3 2 1     1.22333537E-11 # Real(TQR(3,2,1),dp) 
+ 3 2 2     7.28899535E-08 # Real(TQR(3,2,2),dp) 
+ 3 2 3    -1.41365174E-02 # Real(TQR(3,2,3),dp) 
+ 3 3 1     1.99299493E-06 # Real(TQR(3,3,1),dp) 
+ 3 3 2     1.18747751E-02 # Real(TQR(3,3,2),dp) 
+ 3 3 3    -2.05216777E+03 # Real(TQR(3,3,3),dp) 
+BLOCK TDIN #
+ 1 1    -2.50308102E+00 # Real(Td(1,1),dp) 
+ 1 2    -3.38185067E-05 # Real(Td(1,2),dp) 
+ 1 3     6.79618705E-04 # Real(Td(1,3),dp) 
+ 2 1    -6.42509795E-04 # Real(Td(2,1),dp) 
+ 2 2    -4.75508349E+01 # Real(Td(2,2),dp) 
+ 2 3    -8.90417372E-02 # Real(Td(2,3),dp) 
+ 3 1    -1.40438029E-01 # Real(Td(3,1),dp) 
+ 3 2     9.68220294E-01 # Real(Td(3,2),dp) 
+ 3 3    -1.00532466E+03 # Real(Td(3,3),dp) 
+BLOCK TEIN #
+ 1 1    -3.05656068E-01 # Real(Te(1,1),dp) 
+ 1 2     3.97269654E-07 # Real(Te(1,2),dp) 
+ 1 3     6.03691411E-06 # Real(Te(1,3),dp) 
+ 2 1     1.92178488E-09 # Real(Te(2,1),dp) 
+ 2 2    -6.31720270E+01 # Real(Te(2,2),dp) 
+ 2 3     6.03633683E-06 # Real(Te(2,3),dp) 
+ 3 1     1.86300432E-09 # Real(Te(3,1),dp) 
+ 3 2     3.85144100E-07 # Real(Te(3,2),dp) 
+ 3 3    -9.30515917E+02 # Real(Te(3,3),dp) 
+BLOCK TUIN #
+ 1 1    -2.70999444E-02 # Real(Tu(1,1),dp) 
+ 1 2    -6.28063735E-03 # Real(Tu(1,2),dp) 
+ 1 3    -7.35817585E-05 # Real(Tu(1,3),dp) 
+ 2 1     3.14254082E+00 # Real(Tu(2,1),dp) 
+ 2 2    -1.35498292E+01 # Real(Tu(2,2),dp) 
+ 2 3    -4.38394905E-01 # Real(Tu(2,3),dp) 
+ 3 1    -1.35297686E+01 # Real(Tu(3,1),dp) 
+ 3 2     9.32959825E+01 # Real(Tu(3,2),dp) 
+ 3 3    -1.39578077E+03 # Real(Tu(3,3),dp) 
+BLOCK TYXIN #
+ 1    -6.70990502E-02 # Real(Tyx(1) ,dp) 
+ 2    -6.69204140E-02 # Real(Tyx(2) ,dp) 
+ 3    -1.99415443E-02 # Real(Tyx(3) ,dp) 
+BLOCK ESIXTKAPPAIN #
+ 1 1    -7.51240735E+02 # Real(Tkap(1,1),dp) 
+ 1 2     0.00000000E+00 # Real(Tkap(1,2),dp) 
+ 1 3     0.00000000E+00 # Real(Tkap(1,3),dp) 
+ 2 1     0.00000000E+00 # Real(Tkap(2,1),dp) 
+ 2 2    -7.51240735E+02 # Real(Tkap(2,2),dp) 
+ 2 3     0.00000000E+00 # Real(Tkap(2,3),dp) 
+ 3 1     0.00000000E+00 # Real(Tkap(3,1),dp) 
+ 3 2     0.00000000E+00 # Real(Tkap(3,2),dp) 
+ 3 3    -3.36717378E+02 # Real(Tkap(3,3),dp) 
+BLOCK TESIXTLAMBDA12IN #
+ 1 1     2.69442123E+01 # Real(TLAI(1,1),dp) 
+ 1 2    -3.67735973E+00 # Real(TLAI(1,2),dp) 
+ 2 1    -3.67735973E+00 # Real(TLAI(2,1),dp) 
+ 2 2     2.69442123E+01 # Real(TLAI(2,2),dp) 
+BLOCK TLAMBDA5IN #
+ 1    -2.26804454E+02 # Real(TLA5(1) ,dp) 
+ 2    -2.26804454E+02 # Real(TLA5(2) ,dp) 
+BLOCK TLAMBDA6IN #
+ 1     1.17001215E+02 # Real(TLA6(1) ,dp) 
+ 2     1.17001215E+02 # Real(TLA6(2) ,dp) 
+BLOCK BLIN #
+ 32    -1.16916445E+01 # MBBp 
+BLOCK ESIXRUNIN #
+ 11     1.39697619E+04 # vS 
+ 20     1.27433027E-04 # TWp 
+BLOCK GAUGEIN #
+ 1      3.63802715E-01 # g1 
+ 2      6.40919169E-01 # g2 
+ 3      1.02082068E+00 # g3 
+ 4      1.62302176E-01 # gN 
+ 10    -1.72178318E-02 # gYB 
+ 11     0.00000000E+00 # gBY 
+BLOCK MSOFTIN #
+ 21     2.26305662E+07 # mHd2 
+ 22     3.87042823E+06 # mHu2 
+ 1      2.10779147E+02 # M1 
+ 2      8.80721699E+02 # M2 
+ 3      2.00202017E+03 # M3 
+ 4      4.67019660E+02 # M1P 
+BLOCK E6AFHIN #
+ 8      3.64018812E-02 # lam 
+ 2      1.21366726E+07 # mxd2 
+ 1      4.71998991E+03 # mu
+ 22     3.08998115E+03 # mup
+ 9      4.54195528E+01 # TLA3 
+ 4      8.07745799E+06 # mxu2 
+ 3      5.96990886E+05 # Bmu 
+ 14    -1.03536088E+07 # ms2 
+ 20     1.24209774E+07 # msp2 
+ 21     2.08716324E+07 # msm2 
+ 10     7.17593361E+06 # mphi2 
+ 12     1.35655324E+07 # mphib2 

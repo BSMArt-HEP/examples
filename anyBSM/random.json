@@ -1,0 +1,67 @@
+{
+    "Codes":
+    {
+        "SPheno": {
+            "Command": "/dev/shm/BSMART_Temp/SPhenoTHDMII",
+            "InputFile": "tpl.in",
+            "OutputFile": "SPheno.spc.THDMII",
+            "Run": "True"
+            ,"Observables": {
+                "MW" : { "SLHA" : ["MASS" , [24]] , "VALID": [80.349, 80.403]},
+                "a0" : { "SLHA" : ["TREELEVELUNITARITY" , [1]] , "VALID" : [0.0, 1.0]}
+            }
+        },
+        "HiggsTools":{
+            "HiggsBounds Dataset":  "/itp/swift/marting/FeynTools/hbdataset",
+            "HiggsSignals Dataset": "/itp/swift/marting/FeynTools/hsdataset",
+            "Neutral Higgs": [25,35,36],
+            "Charged Higgs": [37],
+            "Observables":{
+                "HBresult":{"SLHA":["HIGGSTOOLS",[1]],"VALID": [1]},
+                "HSchi2":{"SLHA":["HIGGSTOOLS",[11]],"VALID": [151.19677003897306, 163.55677003897306]}
+            },
+            "Run" : "True"
+        }
+        ,"anyBSM":{
+            "model": "THDMII",
+            "setparameters": {
+                "Mh2":"MH",
+                "MAh2":"MA",
+                "MHm2":"MHp",
+                "M":"M",
+                "TanBeta":"TanBeta",
+                "SinBmA":"SinBmA"},
+            "settings": {"scheme_name": "OSalignmentadpoles","quiet":"True"},
+            "Observables":{
+                "kappalam": {"SLHA":["ANYBSM",[3]], "VALID": [-0.2,6.3]   }
+            },
+            "Run" : "True"
+        }    },
+  
+    "Setup": {
+  	 "RunName": "run01",
+  	 "Type": "Random",
+  	 "csv":"True",
+  	 "StoreAllPoints":"False",
+  	 "Cores": 64,
+  	 "Points": 500000,
+     "Debug": "False"
+    },
+
+
+     "Variables": {
+        "MH": { "RANGE": [300,1200]},
+        "MA": { "RANGE": [300,1200]},
+        "MHp":    { "RANGE": [600,1200]},
+        "M":   { "RANGE": [0,2000]},
+        "TanBeta":   { "RANGE": [0.8,20]},
+        "SinBmA":  { "RANGE": [1,1]}
+    },
+    "Observables": {
+	"TreeU":   { "SLHA": ["TREELEVELUNITARITY", [0]]},
+	"TriU":    { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [0]]},
+	"TriU_a0": { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [1]]},
+	"MW":      { "SLHA": ["MASS", [24]]}
+    }
+    
+}

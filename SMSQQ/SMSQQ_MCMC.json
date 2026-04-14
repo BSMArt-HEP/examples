@@ -1,0 +1,70 @@
+{
+    "Codes":
+    {
+	"SPheno": {
+	    "Command": "~/BSMArt/SPheno-4.0.4/bin/SPhenoSM_SQQ",
+	    "InputFile": "SMSQQ_MCMC.in",
+	    "OutputFile": "SPheno.spc.SM_SQQ",
+	    "Run": "True"
+	},
+
+	"MicrOmegas": {
+	    "Command": "~/BSMArt/micromegas_5.2.1/SM_SQQ/MicrOmegas_v5.2_BSMArt",
+	    "InputFile": "SPheno.spc.SM_SQQ",
+	    "OutputFile": "omg.out",
+	    "Run": "True",
+	    "DD_Limits": "True"
+	}
+
+    },
+
+  
+    "Setup": {
+    "RunName": "SMSQQ_MCMC_01",
+    "Type": "MCMC",
+    "StoreAllPoints":"False",
+    "csv":"False",
+    "Cores": 10,
+    "Merge Results": "True",
+    "Points":200000
+    },
+    
+    "Variables": {
+	"kappa": { "RANGE": [15000.0,250000.0],
+		   "VARIANCE": 15000.0},
+	"ms2":    { "RANGE": [10000000.0,3600000000.0],
+		   "VARIANCE": 200000000.0},
+	"mqm2-ms2":   { "RANGE": [10000.0,3600000000.0],
+		   "VARIANCE": 150000000.0},
+	"mqp2":   { "RANGE": [50000.0,3000000000.0],
+		   "VARIANCE": 150000000.0},
+	"lams":  { "RANGE": [0.1,3.7],
+		   "VARIANCE": 0.2}
+    },
+
+    "Observables": {
+	"ms":      { "SLHA": ["MASS", [55]],
+		     "SCALING":"BIAS",
+		     "MEAN":10000.0,
+		     "VARIANCE":0.2},
+	"mqm":     { "SLHA": ["MASS", [103]],
+		     "SCALING":"OFF"},
+	"mqp":     { "SLHA": ["MASS", [105]],
+		     "SCALING":"OFF"},
+	"Oh2":     { "SLHA": ["DARKMATTER", [1]],
+		     "SCALING":"UPPER",
+		     "MEAN":0.112,
+		     "VARIANCE":0.001},
+        "DD":      { "SLHA": ["DARKMATTER", [501]],
+		     "SCALING":"OFF"},
+	"TreeU":   { "SLHA": ["TREELEVELUNITARITY", [0]],
+		     "SCALING":"OFF"},
+	"TriU":    { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [0]],
+		     "SCALING":"OFF"},
+	"TriU_a0": { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [1]],
+		     "SCALING":"UPPER",
+		     "MEAN":0.5,
+		     "VARIANCE":0.001}
+    }
+    
+}

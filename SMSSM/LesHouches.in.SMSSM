@@ -1,0 +1,119 @@
+Block MODSEL      #  
+ 1 1               #  1/0: High/low scale input 
+ 2 1              # Boundary Condition  
+ 6 0               # Generation Mixing 
+Block SMINPUTS    # Standard Model inputs 
+ 2 1.166370E-05    # G_F,Fermi constant 
+ 3 1.187000E-01    # alpha_s(MZ) SM MSbar 
+ 4 9.118870E+01    # Z-boson pole mass 
+ 5 4.180000E+00    # m_b(mb) SM MSbar 
+ 6 1.735000E+02    # m_top(pole) 
+ 7 1.776690E+00    # m_tau(pole) 
+Block MINPAR      # Input parameters 
+ 1   VARIABLE[0]    # m0
+ 2   VARIABLE[1]    # m12
+ 3   1.0000000E+01    # TanBeta
+ 5   VARIABLE[2]    # Azero
+ 6   0.000E+00    # Bzero
+Block EXTPAR      # Input parameters 
+ 23 3.000000E+02    # Muinput
+ 24 2.500000E+05    # MA2input
+ 61 1.0000000E-01    # LambdaInput
+ 62 0.0000000E-01    # KappaInput
+ 63 1.0000000E+04    # ALambdaInput
+ 64 0.0000000E+03    # AKappaInput
+ 65 1.0000000E+01    # vSInput
+ 100 1.000000E+07    # TadInput
+ 101 0.0000000E+03    # MSInput
+Block SPhenoInput   # SPheno specific input 
+  1 -1              # error level 
+  2  0              # SPA conventions 
+  7  1              # Skip 2-loop Higgs corrections 
+  8  3              # Method used for two-loop calculation 
+  9  1              # Gaugeless limit used at two-loop 
+ 10  0              # safe-mode used at two-loop 
+ 11 0               # calculate branching ratios 
+ 13 1               # 3-Body decays: none (0), fermion (1), scalar (2), both (3) 
+ 14 0               # Run couplings to scale of decaying particle 
+ 12 1.000E-04       # write only branching ratios larger than this value 
+ 15 1.000E-30       # write only decay if width larger than this value 
+ 16 0              # One-loop decays 
+ 19 -2              # Matching order (-2:automatic, -1:pole, 0-2: tree, one- & two-loop) 
+ 31 -1              # fixed GUT scale (-1: dynamical GUT scale) 
+ 32 0               # Strict unification 
+ 34 1.000E-04       # Precision of mass calculation 
+ 35 40              # Maximal number of iterations
+ 36 5               # Minimal number of iterations before discarding points
+ 37 1               # Set Yukawa scheme  
+ 38 2               # 1- or 2-Loop RGEs 
+ 50 1               # Majorana phases: use only positive masses (put 0 to use file with CalcHep/Micromegas!) 
+ 51 0               # Write Output in CKM basis 
+ 52 1               # Write spectrum in case of tachyonic states 
+ 55 1               # Calculate loop corrected masses 
+ 57 0               # Calculate low energy constraints 
+ 65 1               # Solution tadpole equation 
+ 66 1               # Two-Scale Matching 
+ 67 1               # effective Higgs mass calculation 
+ 75 0               # Write WHIZARD files 
+ 76 0               # Write HiggsBounds file   
+ 77 0               # Output for MicrOmegas (running masses for light quarks; real mixing matrices)   
+ 78 0               # Output for MadGraph (writes also vanishing blocks)   
+ 79 0               # Write WCXF files (exchange format for Wilson coefficients) 
+ 86 0.              # Maximal width to be counted as invisible in Higgs decays; -1: only LSP 
+ 510 0.              # Write tree level values for tadpole solutions 
+ 515 0               # Write parameter values at GUT scale 
+ 520 0.              # Write effective Higgs couplings (HiggsBounds blocks): put 0 to use file with MadGraph! 
+ 521 1.              # Diphoton/Digluon widths including higher order 
+ 525 0.              # Write loop contributions to diphoton decay of Higgs 
+ 530 0.              # Write Blocks for Vevacious 
+ 550 0.             # Calculate Fine-Tuning 
+1101 1             # Include Glu in 1.loop corrections 
+1102 1             # Include Fv in 1.loop corrections 
+1103 1             # Include Chi in 1.loop corrections 
+1104 1             # Include Cha in 1.loop corrections 
+1105 1             # Include Fe in 1.loop corrections 
+1106 1             # Include Fd in 1.loop corrections 
+1107 1             # Include Fu in 1.loop corrections 
+1201 1             # Include Sd in 1.loop corrections 
+1202 1             # Include Sv in 1.loop corrections 
+1203 1             # Include Su in 1.loop corrections 
+1204 1             # Include Se in 1.loop corrections 
+1205 1             # Include hh in 1.loop corrections 
+1206 1             # Include Ah in 1.loop corrections 
+1207 1             # Include Hpm in 1.loop corrections 
+1301 1             # Include VG in 1.loop corrections 
+1302 1             # Include VP in 1.loop corrections 
+1303 1             # Include VZ in 1.loop corrections 
+1304 1             # Include VWm in 1.loop corrections 
+1401 1             # Include gG in 1.loop corrections 
+1402 1             # Include gA in 1.loop corrections 
+1403 1             # Include gZ in 1.loop corrections 
+1404 1             # Include gWm in 1.loop corrections 
+1405 1             # Include gWpC in 1.loop corrections 
+1500 1               # Include Wave diagrams 1.loop corrections 
+1501 1               # Include Penguin diagrams 1.loop corrections 
+1502 1               # Include Box diagrams 1.loop corrections 
+Block DECAYOPTIONS   # Options to turn on/off specific decays 
+1    1     # Calc 3-Body decays of Glu 
+2    1     # Calc 3-Body decays of Chi 
+3    1     # Calc 3-Body decays of Cha 
+4    1     # Calc 3-Body decays of Sd 
+5    1     # Calc 3-Body decays of Su 
+6    1     # Calc 3-Body decays of Se 
+7    1     # Calc 3-Body decays of Sv 
+1001 1     # Loop Decay of Sd 
+1002 1     # Loop Decay of Su 
+1003 1     # Loop Decay of Se 
+1004 1     # Loop Decay of Sv 
+1005 1     # Loop Decay of hh 
+1006 1     # Loop Decay of Ah 
+1007 1     # Loop Decay of Hpm 
+1008 1     # Loop Decay of Glu 
+1009 1     # Loop Decay of Chi 
+1010 1     # Loop Decay of Cha 
+1011 1     # Loop Decay of Fu 
+1114 1.     # U-factors (0: off, 1:p2_i=m2_i, 2:p2=0, p3:p2_i=m2_1) 
+1115 1.     # Use loop-corrected masses for external states 
+1116 0.     # OS values for W,Z and fermions (0: off, 1:g1,g2,v 2:g1,g2,v,Y_i) 
+1117 0.     # Use defined counter-terms 
+1118 1.     # Use everywhere loop-corrected masses for loop-induced decays 

@@ -1,0 +1,91 @@
+{
+    "Codes":
+    {
+        "SPheno": {
+            "Command": "~/BSMArt/SPheno-4.0.4/bin/SPhenoSM_SQQ",
+            "InputFile": "SMSQQ_AL.in",
+            "OutputFile": "SPheno.spc.SM_SQQ",
+            "Run": "True"
+        },
+
+        "MicrOmegas": {
+            "Command": "~/BSMArt/micromegas_5.2.1_B/SM_SQQ/MicrOmegas_v5.2_BSMArt",
+            "InputFile": "SPheno.spc.SM_SQQ",
+            "OutputFile": "omg.out",
+            "Run": "True",
+            "DD_Limits": "True"
+        }
+
+    },
+  
+    "Setup": {
+        "RunName": "SMSQQ_AL_01",
+        "Type": "AL",
+        "StoreAllPoints":"False",
+        "csv":"True",
+        "Cores": 10,
+    	"Merge Results": "True",
+        "Points":20000
+    },
+
+    "Networks": {
+        "MLmodel": "AL_SMSQQ_01",
+        "HiddenSize": 200,
+        "HiddenLayers": 5,
+        "LearningRate": 0.00001,
+        "SGDmomentum": 0.005,
+        "DSteps": 5000,
+        "WeightDecay": 0.001,
+        "K": 600,
+        "L": 100000,
+        "FromGood": 0.2,
+        "Epsilon": 0.9,
+        "Diversity Alpha": 0.5,
+	"FullTrain": 0, 
+	"AutoStop": "False"
+    },
+
+
+    "Variables": {
+        "kappa": { "RANGE": [5e4,2e5],
+                   "VARIANCE": 3e4},
+        "ms2-mqp2":    { "RANGE": [5.0e8,1.5e9],
+                   "VARIANCE": 1e8},
+        "mqm2-ms2":   { "RANGE": [1e8,8e9],
+                   "VARIANCE": 1e8},
+        "mqp2":   { "RANGE": [1e8,2e9],
+                   "VARIANCE": 1e8},
+        "lams":  { "RANGE": [0.5,3.4],
+                   "VARIANCE": 0.3}
+    },
+
+
+    "Observables": {
+	"ms":      { "SLHA": ["MASS", [55]],
+		     "TYPE":"OFF" },
+	"mqm":     { "SLHA": ["MASS", [103]],
+		     "TYPE":"OFF"},
+	"mqp":     { "SLHA": ["MASS", [105]],
+		     "TYPE":"OFF"},
+	"Oh2":     { "SLHA": ["DARKMATTER", [1]],
+		     "TYPE":"UPPER",
+		     "MAX":0.112},
+        "DD":      { "SLHA": ["DARKMATTER", [501]],
+		     "TYPE":"OFF"},
+	"TreeU":   { "SLHA": ["TREELEVELUNITARITY", [0]],
+		     "TYPE":"OFF"},
+	"TriU":    { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [0]],
+		     "TYPE":"OFF"},
+	"TriU_a0": { "SLHA": ["TREELEVELUNITARITYWTRILINEARS", [1]],
+		     "TYPE":"UPPER",
+		     "MAX":0.5}
+    },
+
+    "Plotting" :{
+        "Strategy" : "csv",
+        "Plots": {
+        "kappa_vs_mS": { "Labels": ["$\\kappa$ (GeV)","$m_{S}$ (GeV)"], "Values": ["kappa","ms"]}
+        }
+    }
+    
+}

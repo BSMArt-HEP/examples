@@ -1,0 +1,41 @@
+{
+    "Codes":{
+        "SPheno":{
+            "Command":"~/BSMArt/SPheno-4.0.5/bin/SPhenoMSSM",
+            "InputFile": "fast_mo.in",
+            "OutputFile": "SPheno.spc.MSSM",
+            "Run": "True",
+	    "Observables":{"mh" : { "SLHA": ["MASS", [25]], "MEAN": 125.0, "VARIANCE": 3.0, "SCALING":"GAUSS", "VALID": [120,130]}}
+            },
+        "MicrOmegas":{
+             "Command": "~/BSMArt/micromegas_5.2.13/SARAH_MSSM/MicrOmegas_v5.2_BSMArt",
+             "InputFile": "SPheno.spc.MSSM",
+             "OutputFile": "omg.out",
+             "LSP": [1000022],
+             "Run": "True",
+            "DD_Limits": "False",
+	    "Observables": {
+		"Oh2" : { "SLHA": ["DARKMATTER", [1]],"SCALING":"LOG", "MEAN":0.112,"VARIANCE":0.05},
+		"LSP" : { "SLHA": ["DARKMATTER", [2]],"SCALING":"OFF"}
+            }
+	}
+    },
+
+    "Setup":{
+        "RunName": "Check_Higgs_Validity",
+        "Type": "Random",
+	"csv": "True",
+        "Cores": 4,
+        "StoreEverything": "False",
+        "StoreAllPoints": "True",
+        "StoreSeparateFiles": "False",
+        "Output File": "MSSM_Output",
+        "Spectrum File": "SPheno.spc.MSSM",
+	"Points": 20
+    },
+
+	"Variables":{ "m0" : { "RANGE": [200,4000]},"m12" : { "RANGE": [200,4000]},"A0" : { "RANGE": [-6000,6000] }},
+
+    "Observables":{
+    }
+}

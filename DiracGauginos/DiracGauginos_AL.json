@@ -1,0 +1,72 @@
+{
+    "Codes":
+    {
+	"SPheno": {
+	    "Command": "~/BSMArt/SPheno-4.0.4/bin/SPhenoDiracGauginos",
+	    "InputFile": "DiracGauginos_Random.in",
+	    "OutputFile": "SPheno.spc.DiracGauginos",
+	    "Run": "True"
+	},
+
+	"MicrOmegas": {
+	    "Command": "~/BSMArt/micromegas_5.2.1_C/DiracGauginos/MicrOmegas_v5.2_BSMArt",
+	    "InputFile": "SPheno.spc.DiracGauginos",
+	    "OutputFile": "omg.out",
+	    "Run": "False",
+	    "DD_Limits": "False"
+	}
+    },
+
+
+    "Setup": {
+        "RunName": "DiracGauginos_ALnew_01",
+        "Type": "AL",
+        "StoreAllPoints":"False",
+        "csv":"True",
+        "Cores": 20,
+        "Merge Results": "True",
+        "Points":10000
+    },
+
+
+    "Networks": {
+        "MLmodel": "DiracGauginos_AL_01",
+        "HiddenSize": 200,
+        "HiddenLayers": 5,
+        "LearningRate": 0.0001,
+        "SGDmomentum": 0.05,
+        "DSteps": 5000,
+        "WeightDecay": 0.001,
+        "K": 500,
+        "L": 50000,
+        "FromGood": 0.9,
+        "Epsilon": 0.8,
+        "Diversity Alpha": 0.1,
+        "FullTrain": 0,
+        "AutoStop": "False"
+    },
+
+
+  "Variables": {
+      "MDB": { "RANGE": [56,2016],
+                   "VARIANCE": 50},
+      "MDW": { "RANGE": [199,1532],
+                   "VARIANCE": 50},
+      "Mu": { "RANGE": [202,2056],
+                   "VARIANCE": 50},
+      "TanBeta": { "RANGE": [5.45, 34.90],
+                   "VARIANCE": 5},
+      "lam": { "RANGE": [0.01, 1.46],
+                   "VARIANCE": 0.1},
+      "LT": { "RANGE": [-1.39, 0.44],
+                   "VARIANCE": 0.1}
+  },
+
+  "Observables": {
+      "mH" : { "SLHA": ["MASS", [25]],
+                     "TYPE":"RANGE",
+                     "MEAN":125.0,
+                     "VARIANCE":3.0}
+  }
+    
+}

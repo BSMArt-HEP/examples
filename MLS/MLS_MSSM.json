@@ -1,0 +1,64 @@
+{
+    "Codes":{
+        "SPheno":{
+             "Command": "~/BSMArt/SPheno-4.0.5/bin/SPhenoMSSM",
+             "InputFile": "MLS_LesHouches.in.MSSM",
+             "OutputFile": "SPheno.spc.MSSM",
+             "Observables":{
+                 "mh" : { "SLHA": ["MASS", [25]], "SCALING": "OFF" , "MEAN": 125.09, "VARIANCE": 3.0}
+                           },
+             "Run": "True"
+           },
+        "MicrOmegas":{
+             "Command": "~/BSMArt/micromegas_6.1.15/SARAH_MSSM/MicrOmegas_v6.1_BSMArt_xsections",
+             "InputFile": "SPheno.spc.MSSM",
+             "OutputFile": "omg.out",
+             "Cross-sections": "False",
+             "Run": "True",
+             "Observables":{
+                 "Oh2" : { "SLHA": ["DARKMATTER", [1]], "SCALING": "GAUSS", "MEAN": 0.112, "VARIANCE": 0.1},
+                            "CDM1" : { "SLHA": ["DARKMATTER", [2]], "SCALING": "OFF"},
+                            "DMpval" : { "SLHA": ["DARKMATTER", [401]], "SCALING": "OFF"}
+                           },
+             "DD_Limits": "False"
+           }
+    },
+
+    "Setup":{
+        "RunName": "MLS_MSSM",
+        "Type": "MLS",
+        "Cores": 4,
+        "StoreEverything": "False",
+        "StoreAllPoints": "True",
+        "Store In Memory": "False",
+        "StoreSeparateFiles": "False",
+        "csv": "True",
+        "Merge Results": "True",
+        "Output File": "MSSM_Output",
+        "Spectrum File": "SPheno.spc.MSSM",
+        "LR": 0.001,
+        "Neurons": [25,25,25],
+        "Points": 100,
+        "Iterations": 100,
+        "Classifier": "True",
+        "LogLike": "True",
+        "DensityPenalty": "False",
+        "Epochs": 5000,
+        "TrainLH": "False"
+    },
+
+    "Variables":{
+	"m0": { "RANGE": [100,2500]},
+	"m12": { "RANGE": [100,2500]}
+    },
+
+    "Observables":{
+    },
+    "Plotting":{
+	 "Strategy": "csv",
+	 "Plots": {
+	     "m0_vs_mh": { "Labels": ["$m_0$ (GeV)","$m_{h}$ (GeV)"], "Values": ["m0","mh"], "Ranges":[[100,2500],[118,128]]},
+	     "m0_vs_m12": { "Labels": ["$m_0$ (GeV)","$m_{12}$ (GeV)"], "Values": ["m0","m12"], "Ranges":[[100,2500],[100,2500]]}
+	        }
+	}
+}

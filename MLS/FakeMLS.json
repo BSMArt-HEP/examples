@@ -1,0 +1,44 @@
+{
+	"Codes": {
+	    "fakefunc" : {
+		"InputFile": "MLS_LesHouches.in.MSSM",
+		"Run": "True",
+		"Observables": { "lres": {"SLHA": ["DUMMY",[1]], "SCALING": "USER"}}
+	    }
+
+
+	},
+	"Setup": {
+		 "RunName": "FakeMLS",
+        "Type": "MLS",
+        "Cores": 4,
+        "StoreEverything": "False",
+        "StoreAllPoints": "True",
+        "Store In Memory": "False",
+        "StoreSeparateFiles": "False",
+        "csv": "True",
+        "Merge Results": "True",
+        "Output File": "MSSM_Output",
+        "Spectrum File": "MLS_LesHouches.in.MSSM",
+		"LR": 0.01,
+	    "Neurons": [50,50],
+		"Points": 50,
+	    "Iterations": 10,
+	    "Epochs": 1000,
+	    "DensityPenalty": 0.1,
+		"LogLike" : "True"
+	},
+
+	"Variables": { 
+		"m0": { "RANGE": [200,2500]},
+	"m12": { "RANGE": [200,2500]}
+	 },
+    "Observables": {},
+    "Plotting": {
+	"Strategy" : "csv",
+        "Plots": {
+         "m0_vs_m12": { "Labels": ["$m_0$ (GeV)","$m_{12}$ (GeV)"], "Values": ["m0","m12"], "Ranges":[[200,2500],[200,2500]]}
+
+	}
+    }
+}

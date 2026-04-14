@@ -1,0 +1,38 @@
+{
+    "Codes":{
+        "SPheno":{
+             "Command": "~/BSMArt/SPheno-4.0.5/bin/SPhenoMSSM",
+             "InputFile": "fast.in",
+             "OutputFile": "SPheno.spc.MSSM",
+            "Run": "True",
+	    "Observables": {"mh" : { "SLHA": ["MASS", [25]], "MEAN": 125.0, "VARIANCE": 3.0, "SCALING":"GAUSS"}}
+        }
+    },
+
+    "Setup":{
+        "RunName": "Fit_Mh",
+        "Type": "Random",
+	"csv": "True",
+        "Cores": 1,
+        "StoreEverything": "False",
+        "StoreAllPoints": "True",
+        "StoreSeparateFiles": "False",
+        "Output File": "MSSM_Output",
+        "Spectrum File": "SPheno.spc.MSSM",
+	"Points": 20
+    },
+
+    "Variables":{ "m12" : { "RANGE": [200,4000]},
+		  "A0" : { "RANGE": [-6000,6000]}
+		},
+
+    "Fitting": {
+	"Variables": { "m0" : {"RANGE": [200,6000]} },
+	"Observables": {"mh" :{"TARGET": 125,"VARIANCE":0.5}},
+	"Options" : {"eps": 0.1, "ftol" : 1.0, "disp" : "False"}
+    },
+
+    "Observables":{
+	
+    }
+}
