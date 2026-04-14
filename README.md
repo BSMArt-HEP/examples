@@ -1,6 +1,6 @@
 # BSMArt examples repository
 
-This is a repository for storing examples, community example scans and contributed tools for BSMArt
+This is a repository for storing examples, community example scans and contributed tools for [BSMArt](https://goodsell.pages.in2p3.fr/bsmart/).
 
 
 
