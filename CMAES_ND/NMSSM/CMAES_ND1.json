@@ -1,0 +1,155 @@
+{
+    "Codes": {
+        "SPheno": {
+            "Command": "SPheno-4.0.5/bin/SPhenoNMSSM",
+            "InputFile": "Scan_Spect.in.NMSSM",
+            "OutputFile": "SPheno.spc.NMSSM",
+            "Observables": {
+			    "mh1" : {"SLHA": ["MASS", [25]], "SCALING": "CFUNCTION", "RANGE": [92,98], "VALID": [92,98] },
+                            "mh2" : { "SLHA": ["MASS", [35]], "SCALING": "CFUNCTION", "RANGE": [122,128], "VALID": [122,128] },
+                            "MN1": { "SLHA": ["MASS", [1000022]], "SCALING": "OFF", "MEAN": 133, "VARIANCE": 5 },
+                            "MN2": { "SLHA": ["MASS", [1000023]], "SCALING": "OFF" },
+                            "MN3": { "SLHA": ["MASS", [1000025]],"SCALING": "OFF" },
+                           "lambdaIn": { "SLHA": ["NMSSMRUN",[1]], "SCALING": "OFF" },
+                            "diff12" : { "FUNCTION" : "abs(MN2)-abs(MN1)", "SCALING": "CFUNCTION", "RANGE": [0,5] , "VALID": [0,5]},
+                            "diff23" : { "FUNCTION" : "abs(MN3)-abs(MN2)", "SCALING": "CFUNCTION", "RANGE": [10,30] }
+            },
+            "Run": "True"
+        },
+        "HiggsTools": {
+            "HiggsBounds Dataset": "hbdataset-master",
+            "HiggsSignals Dataset": "hsdataset-main",
+            "Neutral Higgs": [25, 35, 45, 36, 46],
+            "Charged Higgs": [37],
+            "Signal Strengths": "True",
+            "Observables": {
+                "HBobsr": {
+                    "SLHA": [
+                        "HIGGSTOOLS",
+                        [2]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "RANGE": [0,1],
+                   "VALID":[0,1]
+                },
+                "HSpval": {
+                    "SLHA": [
+                        "HIGGSTOOLS",
+                        [13]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "RANGE": [0.2,1.0],
+                    "VALID": [0.1,1.0]
+                },
+                "mugamgam" : { "SLHA": ["HIGGSTOOLS",[1003]], "SCALING": "CFUNCTION","RANGE": [0.08,0.40]},
+                 "mubbLEP" : { "SLHA": ["HIGGSTOOLS",[1400]], "SCALING": "CFUNCTION","RANGE": [0.05,0.2]},
+               "mutautau" : { "SLHA": ["HIGGSTOOLS",[1006]], "SCALING": "OFF","RANGE": [0.7,1.70]}
+
+            },
+            "Run": "True"
+        },
+        "MicrOmegas": {
+            "Command": "micromegas_6.1.15/SARAH_NMSSM/MicrOmegas_v6.1_BSMArt_xsections",
+            "InputFile": "SPheno.spc.NMSSM",
+            "OutputFile": "omg.out",
+            "Cross-sections": "True",
+            "Run": "True",
+            "LSP": [1000022],
+            "Observables": {
+                "Oh2": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [1]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "RANGE": [0,0.13],
+                    "LOG SCALING": "True" 
+                },
+                "CDM1": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [2]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "DMpval": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [401]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "RANGE": [0.2,1.0],
+                   "VALID": [0.1,1.0]
+                }
+            },
+            "DD_Limits": "False"
+        },
+        "SModelS": {
+            "Path": "smodels-main",
+            "Cache": "smodels-main/CACHE",
+            "QNUMBERS file": "QNUMBERS_NMSSM.slha",
+            "Parameter file": "parameters.ini",
+            "Observables": {
+                "SModelSr": {
+                    "SLHA": [
+                        "SMODELS",
+                        [1]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "RANGE": [0,1]
+              
+                }
+            },
+            "Run": "True"
+        }
+        
+   },
+    "Setup": {
+        "RunName": "NMSSM_ND",
+        "Type": "CMAES_ND",
+        "Cores": 12,
+        "StoreEverything": "False",
+        "StoreAllPoints": "False",
+        "Store In Memory": "True",
+        "Store Invalid" : "True",
+        "StoreSeparateFiles": "False",
+        "CMAESPopulationSize": 24,
+        "csv": "True",
+        "Merge Results": "True",
+        "Output File": "NMSSM_Output",
+        "Spectrum File": "SPheno.spc.NMSSM",
+        "Points": 10000,
+        "Iterations": 30,
+        "Classifier": "True",
+        "LogLike": "True"
+    },
+    "Variables": {   "lamIn": {"RANGE": [0.013,0.019], "VARIANCE": 0.001 },
+        "kapIn": { "RANGE": [0.0058,0.0086], "VARIANCE": 0.001 },
+        "tbIn": { "RANGE": [3.61,10.9] , "VARIANCE": 2},
+        "AtIn": { "RANGE": [-5000,142] , "VARIANCE": 500},
+        "muIn": { "RANGE": [-244,-148] , "VARIANCE": 10},
+        "AlamIn": { "RANGE": [-5000,-1820], "VARIANCE": 500},
+        "AkapIn": { "RANGE": [93,362] , "VARIANCE": 50},
+        "M1In": { "RANGE": [178,290], "VARIANCE": 10 },
+        "M2In": { "RANGE": [304,5000] , "VARIANCE": 500},
+        "M3In": { "RANGE": [739,5000], "VARIANCE": 500 }},
+    "Observables": {},
+    "Fitting": {  
+        "Variables": { "MQ3In": {"RANGE": [73984, 25000000]}},
+        "Observables": {"mh2" :{"TARGET": 125,"VARIANCE":0.5}},
+        "Options" : {"eps": 0.1, "ftol" : 1.0, "disp" : "False", "Overloads": [["SPHENOINPUT",[11],0]]}
+    },
+    "Plotting": {
+        "Strategy": "csv",
+        "Plots": {
+            "mh1_vs_mh2": {
+                "Labels": ["$m_{h1}$ (GeV)", "$m_{h2}$ (GeV)"],
+                "Values": ["mh1", "mh2"],
+                "Ranges": [
+                    [60, 120],
+                    [118, 128]
+                ]
+            }
+        }
+    }
+}
