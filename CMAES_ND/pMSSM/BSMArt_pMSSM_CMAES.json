@@ -1,0 +1,769 @@
+{
+    "Codes": {
+        "SPheno": {
+            "Command": "SPheno-4.0.5/bin/SPhenoMSSM",
+            "InputFile": "Scan_Spect.in.pMSSM",
+            "OutputFile": "SPheno.spc.pMSSM",
+            "Observables": {
+                "mh": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            25
+                        ]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "MEAN": 125.0,
+                    "VARIANCE": 3.0,
+                    "VALID": [
+                        122,
+                        128
+                    ]
+                },
+                "m_Chi_1": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000022
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "m_Chi_2": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000023
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Delta_m_Chi_1_Chi_2": {
+                    "FUNCTION": "abs(m_Chi_1 - m_Chi_2)",
+                    "SCALING": "OFF"
+                },
+                "m_Cha_1": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000024
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "m_Cha_2": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000037
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Delta_m_Chi_1_Cha_1": {
+                    "FUNCTION": "abs(m_Chi_1 - m_Cha_1)",
+                    "SCALING": "OFF"
+                },
+                "BR_Chi_2_Fe_1": {
+                    "SLHA": [
+                        "BR",
+                        [
+                            1000023, [-11, 11, 1000022]
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "BR_Chi_2_Fe_2": {
+                    "SLHA": [
+                        "BR",
+                        [
+                            1000023, [-13, 13, 1000022]
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "sum_BR_Chi_2": {
+                    "FUNCTION": "BR_Chi_2_Fe_1 + BR_Chi_2_Fe_2",
+                    "SCALING": "OFF"
+                },
+                "NMIX_1_1": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            1, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_1_2": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            1, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_1_3": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            1, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_1_4": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            1, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_2_1": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            2, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_2_2": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            2, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_2_3": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            2, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_2_4": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            2, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_3_1": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            3, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_3_2": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            3, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_3_3": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            3, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_3_4": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            3, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_4_1": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            4, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_4_2": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            4, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_4_3": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            4, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "NMIX_4_4": {
+                    "SLHA": [
+                        "NMIX",
+                        [
+                            4, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_1_1": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            1, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_1_2": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            1, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_1_3": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            1, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_1_4": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            1, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_2_1": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            2, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_2_2": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            2, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_2_3": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            2, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_2_4": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            2, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_3_1": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            3, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_3_2": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            3, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_3_3": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            3, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_3_4": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            3, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_4_1": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            4, 1
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_4_2": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            4, 2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_4_3": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            4, 3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "IMNMIX_4_4": {
+                    "SLHA": [
+                        "IMNMIX",
+                        [
+                            4, 4
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                }
+            },
+            "Run": "True"
+        },
+        "MicrOmegas": {
+            "Command": "micromegas_6.1.15/SARAH_MSSM/MicrOmegas_v6.1_BSMArt_xsections",
+            "InputFile": "SPheno.spc.pMSSM",
+            "OutputFile": "omg.out",
+            "Cross-sections": "True",
+            "Run": "True",
+            "LSP": [
+                1000022
+            ],
+            "Observables": {
+                "Oh2": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [
+                            1
+                        ]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "MEAN": 0.11,
+                    "VARIANCE": 0.03,
+                    "LOG_SCALING": "True",
+                    "VALID": [
+                        0.08,
+                        0.14
+                    ]
+                },
+                "CDM1": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [
+                            2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "DMpval": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [
+                            401
+                        ]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "LOWER_BOUND": 0.1,
+                    "VALID": [
+                        0.1,
+                        "inf"
+                    ]
+                },
+                "DMmass": {
+                    "SLHA": [
+                        "DARKMATTER",
+                        [
+                            3
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                }
+            },
+            "DD_Limits": "True"
+        },
+        "SModelS": {
+            "Path": "smodels-main",
+            "Cache": "smodels-main/CACHE",
+            "QNUMBERS file": "QNUMBERS_MSSM.slha",
+            "Parameter file": "smodels_parameters.ini",
+            "Observables": {
+                "SModelSr": {
+                    "SLHA": [
+                        "SMODELS",
+                        [
+                            1
+                        ]
+                    ],
+                    "SCALING": "CFUNCTION",
+                    "LOWER_BOUND": 0.0,
+                    "UPPER_BOUND": 1.0,
+                    "VALID": [
+                        0.0,
+                        1.0
+                    ]
+                },
+                "SModelSrm1": {
+                    "SLHA": [
+                        "SMODELS",
+                        [
+                            2
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                }
+            },
+            "Run": "True"
+        }
+    },
+    "Setup": {
+        "RunName": "pMSSM-general-scan",
+        "Type": "CMAES-ND",
+        "Cores": 12,
+        "StoreEverything": "False",
+        "StoreAllPoints": "False",
+        "Store In Memory": "False",
+        "Store Invalid" : "True",
+        "StoreSeparateFiles": "False",
+        "csv": "True",
+        "Merge Results": "True",
+        "Output File": "pMSSM_Output",
+        "Spectrum File": "SPheno.spc.pMSSM",
+        "LogLike": "True",
+        "Points": null,
+        "CMAESPopulationSize": null,
+        "CMAESMean": null,
+        "CMAESSigma": null,
+        "CMAESMaxGenerations": 1000,
+        "CMAES MaxLoss": null,
+        "CMAESNoveltyDetection": "False",
+        "CMAESFocus": {
+            "Variables": [
+            ],
+            "Observables": [
+            ]
+        },
+        "CMAESHierarchy": [],
+        "CMAESNoGoodPointsPatience": 100,
+        "CMAESGoodPointsEarlyStop": 1,
+        "CMAESBestLossPatience": 100,
+        "CMAESBestNValidConstraintsPatience": 100
+    },
+    "Variables": {
+        "M1": {
+            "RANGE": [
+                400,
+                4000
+            ],
+            "PRIOR": "SYMLINEAR"
+        },
+        "M2": {
+            "RANGE": [
+                400,
+                4000
+            ],
+            "PRIOR": "SYMLINEAR"
+        },
+        "M3": {
+            "RANGE": [
+                1000,
+                4000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "mu": {
+            "RANGE": [
+                400,
+                4000
+            ],
+            "PRIOR": "SYMLINEAR"
+        },
+        "At": {
+            "RANGE": [
+                -6000,
+                6000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "Ab": {
+            "RANGE": [
+                -4000,
+                4000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "Atau": {
+            "RANGE": [
+                -4000,
+                4000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "M2_A": {
+            "RANGE": [
+                10000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_L1": {
+            "RANGE": [
+                10000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_e1": {
+            "RANGE": [
+                10000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_L3": {
+            "RANGE": [
+                10000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_e3": {
+            "RANGE": [
+                10000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_Q1": {
+            "RANGE": [
+                490000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_u1": {
+            "RANGE": [
+                490000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_d1": {
+            "RANGE": [
+                490000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_Q3": {
+            "RANGE": [
+                490000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_u3": {
+            "RANGE": [
+                490000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "m2_d3": {
+            "RANGE": [
+                490000,
+                16000000
+            ],
+            "PRIOR": "LINEAR"
+        },
+        "tanb": {
+            "RANGE": [
+                1,
+                60
+            ],
+            "PRIOR": "LINEAR"
+        }
+    },
+    "Observables": {},
+    "Plotting": {
+        "Strategy": "csv",
+        "Plots": {
+            "M1_vs_mh": {
+                "Labels": [
+                    "$M_1$ (GeV)",
+                    "$m_{h}$ (GeV)"
+                ],
+                "Values": [
+                    "M1",
+                    "mh"
+                ],
+                "Ranges": [
+                    [
+                        -4000,
+                        4000
+                    ],
+                    [
+                        118,
+                        128
+                    ]
+                ]
+            },
+            "At_vs_mh": {
+                "Labels": [
+                    "$A_t$ (GeV)",
+                    "$m_{h}$ (GeV)"
+                ],
+                "Values": [
+                    "At",
+                    "mh"
+                ],
+                "Ranges": [
+                    [
+                        -6000,
+                        6000
+                    ],
+                    [
+                        118,
+                        128
+                    ]
+                ]
+            },
+            "mu_vs_mh": {
+                "Labels": [
+                    "$\\mu$ (GeV)",
+                    "$m_{h}$ (GeV)"
+                ],
+                "Values": [
+                    "mu",
+                    "mh"
+                ],
+                "Ranges": [
+                    [
+                        -4000,
+                        4000
+                    ],
+                    [
+                        118,
+                        128
+                    ]
+                ]
+            },
+            "tanb_vs_mh": {
+                "Labels": [
+                    "$\\tan \\beta$",
+                    "$m_{h}$ (GeV)"
+                ],
+                "Values": [
+                    "tanb",
+                    "mh"
+                ],
+                "Ranges": [
+                    [
+                        1,
+                        60
+                    ],
+                    [
+                        118,
+                        128
+                    ]
+                ]
+            },
+            "Oh2_vs_mh": {
+                "Labels": [
+                    "$\\Omega h^2$",
+                    "$m_{h}$ (GeV)"
+                ],
+                "Values": [
+                    "Oh2",
+                    "mh"
+                ],
+                "Ranges": [
+                    [
+                        0,
+                        1
+                    ],
+                    [
+                        118,
+                        128
+                    ]
+                ]
+            },
+            "DMmass_vs_mh": {
+                "Labels": [
+                    "$m_{\\chi^0_1}$ (GeV)",
+                    "$m_{h}$ (GeV)"
+                ],
+                "Values": [
+                    "DMmass",
+                    "mh"
+                ],
+                "Ranges": [
+                    [
+                        100,
+                        10000
+                    ],
+                    [
+                        118,
+                        128
+                    ]
+                ]
+            }
+        }
+    }
+}
