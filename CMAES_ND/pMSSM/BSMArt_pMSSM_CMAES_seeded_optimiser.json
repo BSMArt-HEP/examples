@@ -36,11 +36,23 @@
                             1000023
                         ]
                     ],
-                    "SCALING": "OFF"
+                    "SCALING": "CFUNCTION",
+                    "MEAN": 300.0,
+                    "VARIANCE": 100.0,
+                    "VALID": [
+                        200.0,
+                        400.0
+                    ]
                 },
                 "Delta_m_Chi_1_Chi_2": {
                     "FUNCTION": "abs(m_Chi_1 - m_Chi_2)",
-                    "SCALING": "OFF"
+                    "SCALING": "CFUNCTION",
+                    "MEAN": 20.0,
+                    "VARIANCE": 10.0,
+                    "VALID": [
+                        10.0,
+                        30.0
+                    ]
                 },
                 "m_Cha_1": {
                     "SLHA": [
@@ -84,7 +96,12 @@
                 },
                 "sum_BR_Chi_2": {
                     "FUNCTION": "BR_Chi_2_Fe_1 + BR_Chi_2_Fe_2",
-                    "SCALING": "OFF"
+                    "SCALING": "CFUNCTION",
+                    "LOWER_BOUND": 0.07,
+                    "VALID": [
+                        0.07,
+                        "inf"
+                    ]
                 },
                 "NMIX_1_1": {
                     "SLHA": [
@@ -373,6 +390,60 @@
                         ]
                     ],
                     "SCALING": "OFF"
+                },
+                "Se_1": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000011
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Se_2": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000013
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Se_3": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            1000015
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Se_4": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            2000011
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Se_5": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            2000013
+                        ]
+                    ],
+                    "SCALING": "OFF"
+                },
+                "Se_6": {
+                    "SLHA": [
+                        "MASS",
+                        [
+                            2000015
+                        ]
+                    ],
+                    "SCALING": "OFF"
                 }
             },
             "Run": "True"
@@ -473,168 +544,171 @@
         }
     },
     "Setup": {
-        "RunName": "pMSSM-general-scan",
+        "RunName": "pMSSM-seeded-optimiser-scan",
         "Type": "CMAES-ND",
         "Cores": 12,
         "StoreEverything": "False",
         "StoreAllPoints": "False",
         "Store In Memory": "True",
         "Store Invalid" : "True",
-        "StoreSeparateFiles": "False",
+        "StoreSeparateFiles": "True",
         "csv": "True",
         "Merge Results": "True",
         "Output File": "pMSSM_Output",
         "Spectrum File": "SPheno.spc.pMSSM",
         "LogLike": "True",
         "Points": null,
+        "CMAESPathSeeds": "pMSSM_seeds.csv",
         "CMAESPopulationSize": null,
         "CMAESMean": null,
-        "CMAESSigma": null,
-        "CMAESMaxGenerations": 1000,
+        "CMAESSigma": 1e-3,
+        "CMAESMaxGenerations": 10000,
         "CMAES MaxLoss": null,
-        "CMAESNoveltyDetection": "False",
+        "CMAESNoveltyDetection": "Optimiser",
+        "CMAESNoveltyDetectionParams": {"direction": "max"},
         "CMAESFocus": {
             "Variables": [
             ],
             "Observables": [
+                "sum_BR_Chi_2"
             ]
         },
         "CMAESHierarchy": [],
-        "CMAESNoGoodPointsPatience": 100,
-        "CMAESGoodPointsEarlyStop": 1,
-        "CMAESBestLossPatience": 100,
-        "CMAESBestNValidConstraintsPatience": 100
+        "CMAESNoGoodPointsPatience": 1000,
+        "CMAESGoodPointsEarlyStop": 1000,
+        "CMAESBestLossPatience": 1000,
+        "CMAESBestNValidConstraintsPatience": 1000
     },
     "Variables": {
         "M1": {
             "RANGE": [
-                400,
+                -4000,
                 4000
             ],
-            "PRIOR": "SYMLINEAR"
+            "PRIOR": "LINEAR"
         },
         "M2": {
             "RANGE": [
-                400,
+                -4000,
                 4000
             ],
-            "PRIOR": "SYMLINEAR"
+            "PRIOR": "LINEAR"
         },
         "M3": {
             "RANGE": [
-                1000,
-                4000
+                0,
+                10000
             ],
             "PRIOR": "LINEAR"
         },
         "mu": {
             "RANGE": [
-                400,
+                -4000,
                 4000
             ],
-            "PRIOR": "SYMLINEAR"
+            "PRIOR": "LINEAR"
         },
         "At": {
             "RANGE": [
-                -6000,
-                6000
+                -7000,
+                7000
             ],
             "PRIOR": "LINEAR"
         },
         "Ab": {
             "RANGE": [
-                -4000,
-                4000
+                -7000,
+                7000
             ],
             "PRIOR": "LINEAR"
         },
         "Atau": {
             "RANGE": [
-                -4000,
-                4000
+                -7000,
+                7000
             ],
             "PRIOR": "LINEAR"
         },
         "M2_A": {
             "RANGE": [
-                10000,
+                0,
                 16000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_L1": {
             "RANGE": [
-                10000,
+                0,
                 16000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_e1": {
             "RANGE": [
-                10000,
+                0,
                 16000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_L3": {
             "RANGE": [
-                10000,
+                0,
                 16000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_e3": {
             "RANGE": [
-                10000,
+                0,
                 16000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_Q1": {
             "RANGE": [
-                490000,
-                16000000
+                0,
+                100000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_u1": {
             "RANGE": [
-                490000,
-                16000000
+                0,
+                100000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_d1": {
             "RANGE": [
-                490000,
-                16000000
+                0,
+                100000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_Q3": {
             "RANGE": [
-                490000,
-                16000000
+                0,
+                100000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_u3": {
             "RANGE": [
-                490000,
-                16000000
+                0,
+                100000000
             ],
             "PRIOR": "LINEAR"
         },
         "m2_d3": {
             "RANGE": [
-                490000,
-                16000000
+                0,
+                100000000
             ],
             "PRIOR": "LINEAR"
         },
         "tanb": {
             "RANGE": [
-                1,
+                2,
                 60
             ],
             "PRIOR": "LINEAR"
@@ -675,8 +749,8 @@
                 ],
                 "Ranges": [
                     [
-                        -6000,
-                        6000
+                        -7000,
+                        7000
                     ],
                     [
                         118,
@@ -715,7 +789,7 @@
                 ],
                 "Ranges": [
                     [
-                        1,
+                        2,
                         60
                     ],
                     [
