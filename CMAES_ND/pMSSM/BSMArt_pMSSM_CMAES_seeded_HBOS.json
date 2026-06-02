@@ -545,7 +545,7 @@
     },
     "Setup": {
         "RunName": "pMSSM-seeded-HBOS-scan",
-        "Type": "CMAES-ND",
+        "Type": "CMAES_ND",
         "Cores": 12,
         "StoreEverything": "False",
         "StoreAllPoints": "False",
