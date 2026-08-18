@@ -13,3 +13,4 @@ To use the examples provided here, you should:
  * Copy any other files present (tools directory, Les Houches input files) to the newly created scan directory.
 
 
+A good starting point are the toy model scans [Random](Toy/random_rosen.json), [CMAES](CMAES_ND/Toy/cmaes_rosen.json) and [CMAES_ND](CMAES_ND/Toy/cmaesnd_rosen.json): these run as-is without any model, Les Houches file or configuration, although for the latter two the cmaes (and pyod for ND) packages must be installed.

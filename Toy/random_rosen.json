@@ -1,0 +1,48 @@
+{
+"Codes": {
+    "toy_targets": {
+	"Run": "True",
+	"Rosenbrock a": 1.0,
+	"Rosenbrock b": 100.0,
+	"Observables": {
+	    "rosen": {
+		"FUNCTION": "Rosenbrock",
+		"SCALING": "USER",
+		"VALID" : [0,3]
+	    }
+	}
+    },
+    "pass_tool": {
+	"Run": "False",
+	"Conditions": ["rosen<3"]
+    }
+},
+    "Setup": {
+	"RunName": "TestRandom",
+	"Type": "Random",
+	"Cores": 8,
+	"StoreEverything": "False",
+	"Skip SLHA Files": "True",
+	"StoreAllPoints": "False",
+	"Store In Memory": "True",
+	"Store Invalid": "True",
+	"StoreSeparateFiles": "False",
+	"csv": "True",
+	"Merge Results": "True",
+	"Output File": "Fake_Output",
+	"Spectrum File": "fake.in",
+	"Points": 10000
+    },
+    "Variables": { "x1": { "RANGE": [-5,5]},
+		   "x2": { "RANGE": [-5,5]},
+		   "x3": { "RANGE": [-5,5]},
+		   "x4": { "RANGE": [-5,5]}
+		  
+    },
+    "Plotting": {
+	"Strategy": "csv",
+	"Plots": {
+	    "x1_vs_x2": { "Labels": ["$x_1$ ","$x_{2}$ "], "Values": ["x1","x2"]}
+	}
+    }
+}
