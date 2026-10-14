@@ -3,7 +3,7 @@
         "SPheno": {
             "Command": "SPheno-4.0.5/bin/SPhenoMSSM",
             "InputFile": "Scan_Spect.in.pMSSM",
-            "OutputFile": "SPheno.spc.pMSSM",
+            "OutputFile": "SPheno.spc.MSSM",
             "Observables": {
                 "mh": {
                     "SLHA": [
@@ -450,7 +450,7 @@
         },
         "MicrOmegas": {
             "Command": "micromegas_6.1.15/SARAH_MSSM/MicrOmegas_v6.1_BSMArt_xsections",
-            "InputFile": "SPheno.spc.pMSSM",
+            "InputFile": "SPheno.spc.MSSM",
             "OutputFile": "omg.out",
             "Cross-sections": "True",
             "Run": "True",
@@ -555,7 +555,7 @@
         "csv": "True",
         "Merge Results": "True",
         "Output File": "pMSSM_Output",
-        "Spectrum File": "SPheno.spc.pMSSM",
+        "Spectrum File": "SPheno.spc.MSSM",
         "LogLike": "True",
         "Points": null,
         "CMAESPathSeeds": "pMSSM_seeds.csv",
